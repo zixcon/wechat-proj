@@ -1,18 +1,21 @@
-// pages/views/article/article.js
+const time = require('../../../../utils/time.js');
+
+// pages/views/offline/idiom/idiom.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    idiom: {},
+    clock: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    time.myfunc();
   },
 
   /**
@@ -62,5 +65,25 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+
+  idiomstart: function() {
+    var that = this;
+    // todo url请求
+    var idiom = {num:1,time:30,content:"森罗万象"}
+    console.log(idiom);
+    this.setData({
+      idiom: idiom
+    })
+    time.countdown(that, 30 * 1000)
+  },
+
+  idiomright: function() {
+    // alter 确认发送
+    // todo url请求
+  },
+  idiomwrong: function() {
+    // todo url请求
+    // alter
   }
 })

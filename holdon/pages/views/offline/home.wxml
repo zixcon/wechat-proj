@@ -1,0 +1,15 @@
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-cells__title">和朋友们一起浪吧</view>
+        <view class="weui-cells weui-cells_after-title">
+            <navigator url="../../../pages/views/offline/idiom/idiom" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">你来比划我来猜</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">传送门</view>
+            </navigator>
+            <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">起个名字</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">传送门</view>
+            </navigator>
+        </view>
+    </view>
+</view>

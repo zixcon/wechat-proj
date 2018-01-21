@@ -1,7 +1,7 @@
 {
   "pages":[
-    "pages/views/home",
-    "pages/views/article/article",
+    "pages/views/offline/home",
+    "pages/views/offline/idiom/idiom",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -18,15 +18,15 @@
     "list": [
       {
         "selectedIconPath": "images/icon_tabbar.png",
-        "iconPath": "images/logo.png",
-        "pagePath": "pages/views/home",
-        "text": "首页"
+        "iconPath": "images/icon_intro.png",
+        "pagePath": "pages/views/offline/home",
+        "text": "线下"
       },
       {
         "selectedIconPath": "images/icon_tabbar.png",
         "iconPath": "images/icon_intro.png",
-        "pagePath": "pages/views/article/article",
-        "text": "一刻钟"
+        "pagePath": "pages/index/index",
+        "text": "线上"
       },
       {
         "selectedIconPath": "images/icon_tabbar.png",

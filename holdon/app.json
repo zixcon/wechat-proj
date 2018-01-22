@@ -2,6 +2,7 @@
   "pages":[
     "pages/views/offline/home",
     "pages/views/offline/idiom/idiom",
+    "pages/views/offline/solitaire/idiom",
     "pages/index/index",
     "pages/logs/logs"
   ],

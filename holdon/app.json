@@ -3,6 +3,7 @@
     "pages/views/offline/home",
     "pages/views/offline/idiom/idiom",
     "pages/views/offline/solitaire/idiom",
+    "pages/views/user/user",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -32,7 +33,7 @@
       {
         "selectedIconPath": "images/icon_tabbar.png",
         "iconPath": "images/icon_intro.png",
-        "pagePath": "pages/logs/logs",
+        "pagePath": "pages/views/user/user",
         "text": "我"
       }
     ]

@@ -14,7 +14,7 @@
         </view>
 
         <view class="weui-flex">
-            <view class="weui-flex__item"><view class="placeholder">
+            <view class="weui-flex__item"><view class="placeholder" style="padding: 1em;height: auto;">
             <button class="weui-btn" type="primary" plain="true" bindtouchstart='idiomright'>对</button>
             </view></view>
             <view class="weui-flex__item"><view class="placeholder">

@@ -34,10 +34,7 @@ Page({
               that.setData({
                 userInfo:res.userInfo
               });
-              http.doGet("https://liaolongjun.duapp.com/ace/https.do", {}, function (data) {
-                console.log(data);
-              });
-              http.doPost("https://holdon.top/wx/user/login",res.userInfo,function(data){
+              http.doPost("http://127.0.0.1:8080/wx/auth/login",res ,function(data){
               console.log(data);
               });
               console.log("user authed");

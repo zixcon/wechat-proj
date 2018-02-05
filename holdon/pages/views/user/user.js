@@ -1,6 +1,6 @@
-const auth = require('../../../utils/auth.js');
+// const auth = require('../../../utils/auth.js');
 const http = require('../../../utils/http.js');
-const app = getApp()
+const app = getApp();
 // pages/user/user.js
 Page({
 
@@ -16,7 +16,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    wx.login({
+      success: (res) => {
+        http.doGet("http://127.0.0.1:8080/wx/auth/jscode?jscode="+res.code, null , function (data) {
+          console.log(data);
+        });
+        console.log(res);
+      }
+    })
     var that = this;
     // https://mp.weixin.qq.com/debug/wxadoc/dev/api/authorize.html#wxauthorizeobject
     wx.getSetting({

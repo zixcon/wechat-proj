@@ -1,5 +1,6 @@
 // const auth = require('../../../utils/auth.js');
 const http = require('../../../utils/http.js');
+const user = require('./holdon-user.js');
 const app = getApp();
 // pages/user/user.js
 Page({
@@ -16,48 +17,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
     wx.login({
       success: (res) => {
-        http.doGet("http://127.0.0.1:8080/wx/auth/jscode?jscode="+res.code, null , function (data) {
-          console.log(data);
-        });
-        console.log(res);
-      }
-    })
-    var that = this;
-    // https://mp.weixin.qq.com/debug/wxadoc/dev/api/authorize.html#wxauthorizeobject
-    wx.getSetting({
-      success: (res) => {
-        console.log(res.authSetting);
-        if (null==res.authSetting) {
-          console.log('首次授权');
-        } else {
-          console.log('不是第一次授权', res.authSetting);
-        }
-        console.log(res.authSetting["scope.userInfo"]);
-        if (res.authSetting["scope.userInfo"]) {//如果用户重新同意了授权登录
-          wx.getUserInfo({
-            success: res => {
-              that.setData({
-                userInfo:res.userInfo
-              });
-              http.doPost("http://127.0.0.1:8080/wx/auth/login",res ,function(data){
-              console.log(data);
-              });
-              console.log("user authed");
-              console.log(res);
-            },
-            fail: data => {
-              console.log("user authed denyed");
-              console.log(res);
-            }
-          })
-        } else {
-          // 跳转至手动授权页面
-          wx.openSetting();
-        }
+        http.doLogin("http://127.0.0.1:8080/wx/auth/login?jscode=" + res.code, user.sendUserInfo(that)); 
       }
     });
+    
     // if (this.globalData == null) {
     //   wx.showModal({
     //     title: '弹窗标题',
